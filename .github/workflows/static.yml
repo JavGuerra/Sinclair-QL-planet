@@ -39,7 +39,7 @@ jobs:
       # 2. Instalar la gema de Pluto y dependencias básicas
       - name: Install Pluto
         run: |
-          gem install sqlite3 -v 1.7.3
+          gem install sqlite3
           gem install pluto
 
       # 3. Compilar la web estática en la carpeta public
