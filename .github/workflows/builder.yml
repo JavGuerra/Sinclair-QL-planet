@@ -43,8 +43,10 @@ jobs:
 
       - name: Build Planet with Pluto
         run: |
-          cp -r ./planet-starter/* .
-          pluto build planet.ini --template manifest.txt -o public
+          PLUTO_GEM_DIR=$(ruby -e 'puts Gem.loaded_specs["pluto"].full_gem_path')
+          mkdir -p "$PLUTO_GEM_DIR/templates"
+          cp -r ./planet-starter "$PLUTO_GEM_DIR/templates/planet-starter"
+          pluto build planet.ini --template planet-starter -o public
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
