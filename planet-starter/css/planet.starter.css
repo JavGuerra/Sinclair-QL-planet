@@ -1,47 +1,141 @@
-
-body {
-  font-family: sans-serif;
+/* --- Base global --- */
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222222;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
 
-a {
-  text-decoration: none;
-  color: darkred; }
+/* --- Contenedor principal centrado --- */
+#page {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  a:visited {
-    color: firebrick; }
+#header h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
 
-  a:hover {
-    text-decoration: underline; }
+/* --- Disposición en dos columnas (Flexbox) --- */
+#layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
 
+/* Columna de lectura principal */
+#main {
+  flex: 1;
+  min-width: 0; /* Evita que las imágenes o código rompan el ancho de Flexbox */
+  max-width: 730px; /* Ancho óptimo de lectura */
+}
 
-
+/* Columna lateral de navegación */
 #navwrap {
-  float: right;
-  background-color: white;
-  padding-left: 12px;
-  padding-bottom: 24px; }
+  width: 220px;
+  flex-shrink: 0;
+}
 
 #nav {
-  width: 180px;
-  padding: 4px;
-  border: 1px solid #bbb;
-  background-color: #eee; }
-  #nav ul.subscriptions {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0; }
+  padding: 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+}
 
+#nav p {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
 
+#nav ul.subscriptions {
+  list-style-type: none;
+  margin: 0 0 16px 0;
+  padding-left: 0;
+}
+
+#nav ul.subscriptions li {
+  margin-bottom: 4px;
+  font-size: 0.88rem;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* --- Enlaces --- */
+a {
+  text-decoration: none;
+  color: #a00000;
+}
+
+a:visited {
+  color: #700000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Artículos e Imágenes --- */
 .new-date {
-  border-bottom: 1px solid #9e9e9e;
-  border-top: 1px solid #9e9e9e;
-  padding-top: 3px;
-  padding-bottom: 3px; }
-
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 6px 0;
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
 
 hr.item-seperator {
   border: none;
-  background-color: #ccc;
-  color: #ccc;
-  height: 1px; }
+  background-color: #eee;
+  height: 1px;
+  margin: 24px 0;
+}
+
+.item {
+  margin-bottom: 24px;
+}
+
+.item-title {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.item-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item-footer {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* --- Adaptabilidad Móvil --- */
+@media (max-width: 768px) {
+  #layout {
+    flex-direction: column-reverse; /* El menú pasa arriba o abajo en móvil */
+  }
+  
+  #navwrap {
+    width: 100%;
+  }
+  
+  #main {
+    max-width: 100%;
+  }
+}
