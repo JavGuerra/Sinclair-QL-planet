@@ -83,19 +83,24 @@ body {
   color: #555;
 }
 
-/* --- MODO CLARO (Default) --- */
+/* --- MODO CLARO (Default: Enlaces en Verde) --- */
 
-/* Enlaces generales */
-a, a:visited {
+/* 1. Todos los enlaces por defecto (Verde Menos Intenso) */
+a, 
+a:visited,
+#nav a,
+#nav a:visited {
   text-decoration: none;
-  color: #2d8a4e; /* Verde menos intenso por defecto */
+  color: #2d8a4e !important; /* VERDE MENOS INTENSO */
 }
 
-a:hover {
+a:hover,
+#nav a:hover {
   text-decoration: underline;
+  color: #1b733b !important;
 }
 
-/* Títulos de Noticias (Tanto en el resumen como en el cuerpo) */
+/* 2. Títulos de Noticias (Tanto en el resumen 'Contents' como en el cuerpo) */
 .contents ol li > a,
 .contents ol li > a:visited,
 .item-title a,
@@ -117,7 +122,7 @@ a:hover {
   margin-bottom: 8px;
 }
 
-/* 2. Enlaces de Repositorios / Blogs de origen */
+/* 3. Enlaces de Repositorios / Blogs de origen */
 .feed-title a,
 .feed-title a:visited,
 .item-feed-title a,
@@ -174,7 +179,7 @@ hr.item-seperator {
   }
 }
 
-/* --- MODO OSCURO AUTOMÁTICO --- */
+/* --- MODO OSCURO AUTOMÁTICO (Enlaces en Rojo) --- */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212 !important;
@@ -186,8 +191,11 @@ hr.item-seperator {
   }
 
   /* Enlaces generales en oscuro */
-  a, a:visited {
-    color: #ff7777 !important;
+  a, 
+  a:visited,
+  #nav a,
+  #nav a:visited {
+    color: #ff7777 !important; /* ROJO MENOS INTENSO */
   }
 
   /* 1. Títulos de Noticias (Resumen y Cuerpo) */
