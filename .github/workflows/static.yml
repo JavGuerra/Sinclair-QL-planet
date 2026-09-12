@@ -1,0 +1,63 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  # Ejecutar automáticamente cada 6 horas para actualizar las noticias de los feeds
+  schedule:
+    - cron: "0 */6 * * *"
+  # Permite lanzar el flujo manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+# Permisos requeridos para desplegar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite solo un despliegue concurrente a la vez
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 1. Configurar el entorno de Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      # 2. Instalar la gema de Pluto y dependencias básicas
+      - name: Install Pluto
+        run: |
+          gem install sqlite3 -v 1.7.3
+          gem install pluto
+
+      # 3. Compilar la web estática en la carpeta public
+      - name: Build Planet with Pluto
+        run: |
+          pluto build planet.ini -t starter -o public
+
+      # 4. Configuración del entorno de GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 5. Subir ÚNICAMENTE el resultado de la carpeta public
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      # 6. Desplegar a la web pública de GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
