@@ -43,8 +43,8 @@ jobs:
 
       - name: Build Planet with Pluto
         run: |
-          mkdir -p ~/.pluto
-          cp -r ./planet-starter ~/.pluto/planet-starter
+          mkdir -p ~/.pluto/templates
+          cp -r ./planet-starter ~/.pluto/templates/planet-starter
           pluto build planet.ini --template planet-starter -o public
 
       - name: Setup Pages
