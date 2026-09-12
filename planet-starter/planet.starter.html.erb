@@ -16,10 +16,8 @@
     <p>
       Last Update
     </p>
-    <p class='small'>
-      <% if site.fetched %>
-        <%= site.fetched.strftime('%A, %d. %B %Y %H:%M') %>
-      <% end %>
+    <p class="small">
+      <%= site.updated ? site.updated.strftime('%A, %d %b %Y %H:%M') : Time.now.utc.strftime('%A, %d %b %Y %H:%M UTC') %>
     </p>
 
     <p>Subscriptions</p>
