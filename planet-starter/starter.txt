@@ -6,7 +6,7 @@
 #######
 #  main planet template - gets merged (uses embedded ruby)
 
-__file__.starter.html    planet.starter.html.erb
+index.html    planet.starter.html.erb
 
 
 
