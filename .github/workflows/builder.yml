@@ -43,7 +43,9 @@ jobs:
 
       - name: Build Planet with Pluto
         run: |
-          pluto build planet.ini -i ./planet-starter --template manifest.txt -o public
+          mkdir -p ~/.pluto
+          cp -r ./planet-starter ~/.pluto/planet-starter
+          pluto build planet.ini --template planet-starter -o public
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
