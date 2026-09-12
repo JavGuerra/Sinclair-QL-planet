@@ -157,8 +157,8 @@ hr.item-seperator {
 /* --- Modo Oscuro Automático --- */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #121212; /* Fondo gris muy oscuro */
-    color: #e0e0e0;            /* Texto principal en blanco suave */
+    background-color: #121212 !important; /* Fondo gris muy oscuro */
+    color: #e0e0e0 !important;            /* Texto principal en blanco suave */
   }
 
   /* Encabezado y bordes */
@@ -168,20 +168,20 @@ hr.item-seperator {
 
   /* Enlaces en verde */
   a {
-    color: #30d158; /* Verde brillante */
+    color: #30d158 !important; /* Verde brillante */
   }
 
   a:visited {
-    color: #24a143; /* Verde un poco más oscuro para visitados */
+    color: #24a143 !important; /* Verde un poco más oscuro para visitados */
   }
 
   a:hover {
-    color: #5cf282;
+    color: #5cf282 !important;
   }
 
   /* Caja de navegación lateral */
   #nav {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e !important;
     border-color: #333;
   }
 
