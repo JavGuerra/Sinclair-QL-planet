@@ -70,6 +70,20 @@ body {
   font-size: 0.88rem;
 }
 
+#nav ul.planet-feeds {
+  list-style-type: none;
+  margin: 0 0 16px 0;
+  padding-left: 0;
+}
+
+#nav ul.planet-feeds li {
+  margin-bottom: 4px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .small {
   font-size: 0.85rem;
   color: #555;
@@ -137,5 +151,54 @@ hr.item-seperator {
   
   #main {
     max-width: 100%;
+  }
+}
+
+/* --- Modo Oscuro Automático --- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212; /* Fondo gris muy oscuro */
+    color: #e0e0e0;            /* Texto principal en blanco suave */
+  }
+
+  /* Encabezado y bordes */
+  #header h1 {
+    border-bottom-color: #444;
+  }
+
+  /* Enlaces en verde */
+  a {
+    color: #30d158; /* Verde brillante */
+  }
+
+  a:visited {
+    color: #24a143; /* Verde un poco más oscuro para visitados */
+  }
+
+  a:hover {
+    color: #5cf282;
+  }
+
+  /* Caja de navegación lateral */
+  #nav {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+
+  .small {
+    color: #aaa;
+  }
+
+  /* Separadores y fechas */
+  .new-date {
+    border-color: #444;
+  }
+
+  hr.item-seperator {
+    background-color: #333;
+  }
+
+  .item-footer {
+    color: #888;
   }
 }
