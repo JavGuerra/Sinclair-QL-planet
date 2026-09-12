@@ -37,8 +37,8 @@ body {
 /* Columna de lectura principal */
 #main {
   flex: 1;
-  min-width: 0; /* Evita que las imágenes o código rompan el ancho de Flexbox */
-  max-width: 730px; /* Ancho óptimo de lectura */
+  min-width: 0;
+  max-width: 730px;
 }
 
 /* Columna lateral de navegación */
@@ -59,26 +59,20 @@ body {
   margin-bottom: 6px;
 }
 
-#nav ul.subscriptions {
-  list-style-type: none;
-  margin: 0 0 16px 0;
-  padding-left: 0;
-}
-
-#nav ul.subscriptions li {
-  margin-bottom: 4px;
-  font-size: 0.88rem;
-}
-
+#nav ul.subscriptions,
 #nav ul.planet-feeds {
   list-style-type: none;
   margin: 0 0 16px 0;
   padding-left: 0;
 }
 
+#nav ul.subscriptions li,
 #nav ul.planet-feeds li {
   margin-bottom: 4px;
   font-size: 0.88rem;
+}
+
+#nav ul.planet-feeds li {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -89,18 +83,19 @@ body {
   color: #555;
 }
 
-/* --- Enlaces --- */
+/* --- Enlaces (Modo Claro: Verdes) --- */
 a {
   text-decoration: none;
-  color: #a00000;
+  color: #1b8a3e; /* Verde principal */
 }
 
 a:visited {
-  color: #700000;
+  color: #115c28; /* Verde más oscuro para visitados */
 }
 
 a:hover {
   text-decoration: underline;
+  color: #24b050;
 }
 
 /* --- Artículos e Imágenes --- */
@@ -142,7 +137,7 @@ hr.item-seperator {
 /* --- Adaptabilidad Móvil --- */
 @media (max-width: 768px) {
   #layout {
-    flex-direction: column-reverse; /* El menú pasa arriba o abajo en móvil */
+    flex-direction: column-reverse;
   }
   
   #navwrap {
@@ -154,32 +149,30 @@ hr.item-seperator {
   }
 }
 
-/* --- Modo Oscuro Automático --- */
+/* --- Modo Oscuro Automático (Enlaces Rojos) --- */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #121212 !important; /* Fondo gris muy oscuro */
-    color: #e0e0e0 !important;            /* Texto principal en blanco suave */
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
   }
 
-  /* Encabezado y bordes */
   #header h1 {
     border-bottom-color: #444;
   }
 
-  /* Enlaces en verde */
+  /* Enlaces en Rojo para el Modo Oscuro */
   a {
-    color: #30d158 !important; /* Verde brillante */
+    color: #ff5252 !important; /* Rojo brillante para lectura cómoda sobre fondo oscuro */
   }
 
   a:visited {
-    color: #24a143 !important; /* Verde un poco más oscuro para visitados */
+    color: #ff8a80 !important; /* Rojo pastel suave para enlaces visitados */
   }
 
   a:hover {
-    color: #5cf282 !important;
+    color: #ff1744 !important;
   }
 
-  /* Caja de navegación lateral */
   #nav {
     background-color: #1e1e1e !important;
     border-color: #333;
@@ -189,7 +182,6 @@ hr.item-seperator {
     color: #aaa;
   }
 
-  /* Separadores y fechas */
   .new-date {
     border-color: #444;
   }
