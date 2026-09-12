@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='generator' content='<%= Pluto.generator %>'>
 
   <title><%= site.title %></title>
@@ -19,9 +20,9 @@
   <div id='layout'>
 
     <main id='main'>
-      <!-- 1) list headlines w/ inline links -->
-      <div class='contents'>
-        <p><b>Contents</b></p>
+      <!-- 1) Lista de titulares con enlaces internos -->
+      <section class='contents' aria-labelledby="contents-heading">
+        <h2 id="contents-heading" class="contents-title">Contents</h2>
         <ol>
         <% site.items.latest.limit(17).each_with_index do |item,index| %>
           <li>
@@ -35,9 +36,9 @@
           </li>
         <% end %>
         </ol>
-      </div>
+      </section>
 
-      <!-- 2) list full articles -->
+      <!-- 2) Artículos completos -->
       <%
          items = site.items.latest.limit(17)
          index = 0
@@ -55,9 +56,9 @@
 
       <article class='item' id='<%= "#{index}" %>'>
         <% if new_feed %>
-        <h4 class='feed-title'>
+        <div class='feed-title'>
           <%= link_to item.feed.title, item.feed.url %>
-        </h4>
+        </div>
         <% end %>
 
         <h3 class='item-title'>
@@ -86,7 +87,7 @@
     </main>
 
     <aside id='navwrap'>
-      <div id='nav'>
+      <nav id='nav' aria-label="Menú principal">
         <p><strong>Last Update</strong></p>
         <p class="small">
           <%= site.updated ? site.updated.strftime('%A, %d %b %Y %H:%M') : Time.now.utc.strftime('%A, %d %b %Y %H:%M UTC') %>
@@ -96,7 +97,7 @@
         <ul class='subscriptions small'>
          <% site.feeds.each do |feed| %>
           <li>
-            <%= link_to( image_tag('i/feed-icon-10x10.png'), feed.feed_url ) %>
+            <%= link_to( image_tag('i/feed-icon-10x10.png', alt: 'Feed RSS'), feed.feed_url ) %>
             <%= link_to feed.title, feed.url %>
           </li>
          <% end %>
@@ -105,18 +106,18 @@
         <p><strong>Feeds</strong></p>
         <ul class='planet-feeds small'>
           <li>
-            <%= image_tag('i/feed-icon-10x10.png') %>
+            <%= image_tag('i/feed-icon-10x10.png', alt: 'RSS XML') %>
             <a href="feed.xml">RSS</a>
           </li>
           <li>
-            <%= image_tag('i/feed-icon-10x10.png') %>
+            <%= image_tag('i/feed-icon-10x10.png', alt: 'Atom XML') %>
             <a href="atom.xml">ATOM</a>
           </li>
         </ul>
 
         <p><strong>Meta</strong></p>
         <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a></p>
-      </div>
+      </nav>
     </aside>
 
   </div><!-- /#layout -->

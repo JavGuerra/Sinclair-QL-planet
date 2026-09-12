@@ -7,7 +7,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #222222;
+  color: #1a1a1a;
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
@@ -83,22 +83,52 @@ body {
   color: #555;
 }
 
-/* --- Enlaces (Modo Claro: Verdes) --- */
-a {
-  text-decoration: none;
-  color: #1b8a3e; /* Verde principal */
-}
+/* --- MODO CLARO (Default) --- */
 
-a:visited {
-  color: #115c28; /* Verde más oscuro para visitados */
+/* Enlaces generales */
+a, a:visited {
+  text-decoration: none;
+  color: #2d8a4e; /* Verde menos intenso por defecto */
 }
 
 a:hover {
   text-decoration: underline;
-  color: #24b050;
 }
 
-/* --- Artículos e Imágenes --- */
+/* Títulos de Noticias (Tanto en el resumen como en el cuerpo) */
+.contents ol li > a,
+.contents ol li > a:visited,
+.item-title a,
+.item-title a:visited {
+  color: #0b6623 !important; /* VERDE INTENSO */
+  font-weight: 700;
+}
+
+.contents-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.item-title {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* 2. Enlaces de Repositorios / Blogs de origen */
+.feed-title a,
+.feed-title a:visited,
+.item-feed-title a,
+.item-feed-title a:visited,
+#nav ul.subscriptions a,
+#nav ul.subscriptions a:visited {
+  color: #2d8a4e !important; /* VERDE MENOS INTENSO */
+  font-weight: 600;
+}
+
+/* Separadores y fechas */
 .new-date {
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
@@ -115,12 +145,7 @@ hr.item-seperator {
 }
 
 .item {
-  margin-bottom: 24px;
-}
-
-.item-title {
-  margin-top: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
 }
 
 .item-content img {
@@ -134,7 +159,7 @@ hr.item-seperator {
   margin-top: 10px;
 }
 
-/* --- Adaptabilidad Móvil --- */
+/* Adaptabilidad Móvil */
 @media (max-width: 768px) {
   #layout {
     flex-direction: column-reverse;
@@ -149,7 +174,7 @@ hr.item-seperator {
   }
 }
 
-/* --- Modo Oscuro Automático (Enlaces Rojos) --- */
+/* --- MODO OSCURO AUTOMÁTICO --- */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212 !important;
@@ -160,17 +185,27 @@ hr.item-seperator {
     border-bottom-color: #444;
   }
 
-  /* Enlaces en Rojo para el Modo Oscuro */
-  a {
-    color: #ff5252 !important; /* Rojo brillante para lectura cómoda sobre fondo oscuro */
+  /* Enlaces generales en oscuro */
+  a, a:visited {
+    color: #ff7777 !important;
   }
 
-  a:visited {
-    color: #ff8a80 !important; /* Rojo pastel suave para enlaces visitados */
+  /* 1. Títulos de Noticias (Resumen y Cuerpo) */
+  .contents ol li > a,
+  .contents ol li > a:visited,
+  .item-title a,
+  .item-title a:visited {
+    color: #ff3333 !important; /* ROJO INTENSO */
   }
 
-  a:hover {
-    color: #ff1744 !important;
+  /* 2. Repositorios / Blogs de origen */
+  .feed-title a,
+  .feed-title a:visited,
+  .item-feed-title a,
+  .item-feed-title a:visited,
+  #nav ul.subscriptions a,
+  #nav ul.subscriptions a:visited {
+    color: #ff7777 !important; /* ROJO MENOS INTENSO */
   }
 
   #nav {
