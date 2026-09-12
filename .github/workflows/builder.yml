@@ -45,6 +45,7 @@ jobs:
         run: |
           mkdir -p ~/.pluto/templates
           cp -r ./planet-starter ~/.pluto/templates/planet-starter
+          pluto ls
           pluto build planet.ini --template planet-starter -o public
 
       - name: Setup Pages
