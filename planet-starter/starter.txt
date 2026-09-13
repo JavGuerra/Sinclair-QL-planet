@@ -1,18 +1,17 @@
-##########################################
-# planet starter template pack manifest
-##########################################
-
+#########################################
+# planet starter template pack manifest #
+#########################################
 
 #######
 #  main planet template - gets merged (uses embedded ruby)
 
 index.html    planet.starter.html.erb
-
-
+atom.xml      planet.starter.atom.erb
+feed.xml      planet.starter.rss.erb
 
 ########
 #  more files - get copied 1:1
 
 css/planet.starter.css
-
 i/feed-icon-10x10.png
+
