@@ -105,7 +105,7 @@ a:hover,
 .contents ol li > a:visited,
 .item-title a,
 .item-title a:visited {
-  color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 (máxima fidelidad a RGB) */
+  color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 */
   font-weight: 700;
 }
 
@@ -157,9 +157,14 @@ hr.item-seperator {
   height: auto;
 }
 
-.item-footer {
+/* 4. Fechas y tiempos transcurridos (Pies de artículo e índice Contents) */
+.item-footer,
+.item-updated {
   font-size: 0.85rem;
   color: #666;
+}
+
+.item-footer {
   margin-top: 10px;
 }
 
@@ -235,7 +240,9 @@ hr.item-seperator {
     background-color: #333;
   }
 
-  .item-footer {
+  /* Fechas y tiempos transcurridos en modo oscuro */
+  .item-footer,
+  .item-updated {
     color: #888;
   }
 }
