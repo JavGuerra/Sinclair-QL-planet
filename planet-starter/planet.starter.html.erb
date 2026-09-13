@@ -22,14 +22,22 @@
   <div id='layout'>
 
     <main id='main'>
-      <!-- 1) Lista de titulares con enlaces internos -->
+      <!-- 1) Lista de titulares con enlaces internos (Límite: 50) -->
       <section class='contents' aria-labelledby="contents-heading">
         <h2 id="contents-heading" class="contents-title">Contents</h2>
         <ol>
-        <% site.items.latest.limit(30).each_with_index do |item,index| %>
-          <% item_date = item.updated || item.published %>
+        <% 
+          display_counter = 0
+          site.items.latest.limit(100).each do |item| 
+            # Omitir si el título contiene "Re:" o "re:" en cualquier posición
+            next if item.title.downcase.include?('re:')
+            display_counter += 1
+            break if display_counter > 50
+
+            item_date = item.updated || item.published
+        %>
           <li>
-              <%= link_to item.title, '#'+"#{index+1}" %>
+              <%= link_to item.title, '#'+"#{display_counter}" %>
               <span class='item-feed-title'>
                 &bull; <%= link_to item.feed.title, item.feed.url %>
               </span>
@@ -41,12 +49,17 @@
         </ol>
       </section>
 
-      <!-- 2) Artículos completos -->
+      <!-- 2) Artículos completos (Límite: 50) -->
       <%
-         items = site.items.latest.limit(17)
+         items = site.items.latest.limit(100)
          index = 0
          ItemCursor.new( items ).each do |item, new_date, new_feed|
+           # Omitir si el título contiene "Re:" o "re:" en cualquier posición
+           next if item.title.downcase.include?('re:')
+           
            index += 1
+           break if index > 50
+
            item_date = item.updated || item.published
       %>
 
