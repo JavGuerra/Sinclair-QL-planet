@@ -122,29 +122,28 @@ a:hover,
   margin-bottom: 4px;
 }
 
-/* 3. Fuentes / Repositorios / Subscripciones / Autor */
+/* 3. Fuentes / Repositorios / Subscripciones */
 .feed-title a,
 .feed-title a:visited,
 .item-feed-title a,
 .item-feed-title a:visited,
-.item-author a,
-.item-author a:visited,
 #nav ul.subscriptions a,
 #nav ul.subscriptions a:visited {
   color: #FF0000 !important; /* ROJO PURO #FF0000 */
   font-weight: 400 !important;
 }
 
-/* Metadatos (Autor y Tiempo bajo el título) */
-.item-meta {
+/* Metadatos (Autor, Hora y Tiempo en texto plano idéntico) */
+.item-meta,
+.item-updated,
+.item-author {
   font-size: 0.85rem;
   color: #666;
-  margin-bottom: 12px;
+  font-weight: normal;
 }
 
-.item-updated {
-  font-size: 0.85rem;
-  color: #666;
+.item-meta {
+  margin-bottom: 12px;
 }
 
 /* Separadores y fechas */
@@ -215,13 +214,11 @@ hr.item-seperator {
     font-weight: 700;
   }
 
-  /* 2. Fuentes / Repositorios / Subscripciones / Autor */
+  /* 2. Fuentes / Repositorios / Subscripciones */
   .feed-title a,
   .feed-title a:visited,
   .item-feed-title a,
   .item-feed-title a:visited,
-  .item-author a,
-  .item-author a:visited,
   #nav ul.subscriptions a,
   #nav ul.subscriptions a:visited {
     color: #00FF00 !important; /* VERDE PURO #00FF00 */
@@ -247,7 +244,8 @@ hr.item-seperator {
 
   /* Metadatos en modo oscuro */
   .item-meta,
-  .item-updated {
+  .item-updated,
+  .item-author {
     color: #888;
   }
 }
