@@ -26,7 +26,7 @@
       <section class='contents' aria-labelledby="contents-heading">
         <h2 id="contents-heading" class="contents-title">Contents</h2>
         <ol>
-        <% site.items.latest.limit(17).each_with_index do |item,index| %>
+        <% site.items.latest.each_with_index do |item,index| %>
           <% item_date = item.updated || item.published %>
           <li>
               <%= link_to item.title, '#'+"#{index+1}" %>
