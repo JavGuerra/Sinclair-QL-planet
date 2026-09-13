@@ -95,17 +95,7 @@
           <%= (site.updated || Time.now.utc).utc.strftime('%A, %d %b %Y %H:%M GMT') %>
         </p>
 
-        <p><strong>Subscriptions</strong></p>
-        <ul class='subscriptions small'>
-         <% site.feeds.each do |feed| %>
-          <li>
-            <%= link_to( image_tag('i/feed-icon-10x10.png', alt: 'Feed RSS'), feed.feed_url ) %>
-            <%= link_to feed.title, feed.url %>
-          </li>
-         <% end %>
-        </ul>
-
-        <p><strong>Feeds</strong></p>
+        <p><strong>Planet Feeds</strong></p>
         <ul class='planet-feeds small'>
           <li>
             <%= image_tag('i/feed-icon-10x10.png', alt: 'RSS XML') %>
@@ -115,6 +105,16 @@
             <%= image_tag('i/feed-icon-10x10.png', alt: 'Atom XML') %>
             <a href="atom.xml">ATOM</a>
           </li>
+        </ul>
+
+        <p><strong>Subscriptions</strong></p>
+        <ul class='subscriptions small'>
+         <% site.feeds.each do |feed| %>
+          <li>
+            <%= link_to( image_tag('i/feed-icon-10x10.png', alt: 'Feed RSS'), feed.feed_url ) %>
+            <%= link_to feed.title, feed.url %>
+          </li>
+         <% end %>
         </ul>
 
         <p><strong>Meta</strong></p>
