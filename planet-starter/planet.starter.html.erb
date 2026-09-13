@@ -92,7 +92,7 @@
       <nav id='nav' aria-label="Menú principal">
         <p><strong>Last Update</strong></p>
         <p class="small">
-          <%= site.updated ? site.updated.strftime('%A, %d %b %Y %H:%M') : Time.now.utc.strftime('%A, %d %b %Y %H:%M UTC') %>
+          <%= (site.updated || Time.now.utc).utc.strftime('%A, %d %b %Y %H:%M GMT') %>
         </p>
 
         <p><strong>Subscriptions</strong></p>
