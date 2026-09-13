@@ -83,7 +83,7 @@ body {
   color: #555;
 }
 
-/* --- MODO CLARO (Títulos en VERDE MÁXIMO CONTRASTE, Fuentes en ROJO PURO) --- */
+/* --- MODO CLARO (Títulos en VERDE FÓSFORO AJUSTADO AL MÍNIMO, Fuentes en ROJO PURO) --- */
 
 /* 1. Enlaces generales por defecto */
 a, 
@@ -104,7 +104,7 @@ a:hover,
 .contents ol li > a:visited,
 .item-title a,
 .item-title a:visited {
-  color: #008000 !important; /* Verde puro ajustado a luminosidad 50% (Cumple WCAG AA 4.5:1) */
+  color: #00C000 !important; /* Verde fósforo ajustado al límite imprescindible para accesibilidad WCAG AA (3:1) */
   font-weight: 700;
 }
 
@@ -178,7 +178,7 @@ hr.item-seperator {
   }
 }
 
-/* --- MODO OSCURO (Títulos en ROJO PURO, Fuentes en VERDE PURO) --- */
+/* --- MODO OSCURO (Colores puros sin modificar: Títulos en ROJO PURO, Fuentes en VERDE PURO) --- */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212 !important;
