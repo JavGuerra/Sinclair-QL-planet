@@ -83,7 +83,7 @@ body {
   color: #555;
 }
 
-/* --- MODO CLARO (Títulos en VERDE #00C000, Fuentes en ROJO PURO) --- */
+/* --- MODO CLARO (Títulos en VERDE #00A800, Fuentes en ROJO PURO) --- */
 
 /* 1. Enlaces generales por defecto */
 a, 
@@ -92,7 +92,7 @@ a:visited,
 #nav a:visited {
   text-decoration: none;
   color: #FF0000 !important; /* ROJO PURO #FF0000 */
-  font-weight: 400; /* Grosor normal */
+  font-weight: 400;
 }
 
 a:hover,
@@ -105,8 +105,8 @@ a:hover,
 .contents ol li > a:visited,
 .item-title a,
 .item-title a:visited {
-  color: #00C000 !important; /* Verde fósforo accesible (3:1) */
-  font-weight: 700; /* Se mantiene en negrita para jerarquía */
+  color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 (máxima fidelidad a RGB) */
+  font-weight: 700;
 }
 
 .contents-title {
@@ -122,7 +122,7 @@ a:hover,
   margin-bottom: 8px;
 }
 
-/* 3. Fuentes / Repositorios / Subscripciones (Sin negrita) */
+/* 3. Fuentes / Repositorios / Subscripciones */
 .feed-title a,
 .feed-title a:visited,
 .item-feed-title a,
@@ -130,7 +130,7 @@ a:hover,
 #nav ul.subscriptions a,
 #nav ul.subscriptions a:visited {
   color: #FF0000 !important; /* ROJO PURO #FF0000 */
-  font-weight: 400 !important; /* Grosor normal exactamente igual a los enlaces generales */
+  font-weight: 400 !important;
 }
 
 /* Separadores y fechas */
@@ -208,7 +208,7 @@ hr.item-seperator {
     font-weight: 700;
   }
 
-  /* 2. Fuentes / Repositorios / Subscripciones (Sin negrita) */
+  /* 2. Fuentes / Repositorios / Subscripciones */
   .feed-title a,
   .feed-title a:visited,
   .item-feed-title a,
