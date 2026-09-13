@@ -69,21 +69,37 @@
          <%= link_to item.title, item.url %>
         </h3>
 
-        <!-- Metadatos (Autor real de la entrada si existe, Hora y Tiempo) debajo del título -->
+        <!-- Metadatos de la entrada (Autor detectado universalmente) -->
         <div class='item-meta'>
           <% item_date = item.updated || item.published %>
           <% 
-            raw_author = if item.respond_to?(:author) && item.author.present?
-                           item.author.respond_to?(:name) ? item.author.name : item.author.to_s
-                         elsif item.respond_to?(:authors) && item.authors.present?
-                           first_author = item.authors.first
-                           first_author.respond_to?(:name) ? first_author.name : first_author.to_s
-                         end
+            # 1. Extraer el nombre del autor de todas las vías posibles de Pluto
+            extracted_author = nil
 
-            author_name = (raw_author.present? && raw_author.strip.downcase != item.feed.title.strip.downcase) ? raw_author.strip : nil
+            if item.respond_to?(:author) && item.author.present?
+              extracted_author = item.author.respond_to?(:name) ? item.author.name : item.author.to_s
+            elsif item.respond_to?(:authors) && item.authors.present?
+              first = item.authors.first
+              extracted_author = first.respond_to?(:name) ? first.name : first.to_s
+            elsif item.respond_to?(:creator) && item.creator.present?
+              extracted_author = item.creator.to_s
+            end
+
+            # 2. Validar que el nombre extraído sea válido y no sea el título del feed
+            clean_author = extracted_author ? extracted_author.strip : nil
+            feed_title = item.feed.title ? item.feed.title.strip : ""
+
+            valid_author = if clean_author.present? && 
+                              clean_author.downcase != feed_title.downcase && 
+                              !clean_author.downcase.include?(feed_title.downcase)
+                             clean_author
+                           else
+                             nil
+                           end
           %>
-          <% if author_name %>
-            <span class='item-author'>By <%= author_name %></span> &bull;
+
+          <% if valid_author %>
+            <span class='item-author'>By <%= valid_author %></span> &bull;
           <% end %>
           <span class='item-updated'><%= item_date.strftime('%H:%M GMT') %> (<%= time_ago_in_words(item_date) %>)</span>
         </div>
