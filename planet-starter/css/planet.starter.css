@@ -83,24 +83,23 @@ body {
   color: #555;
 }
 
-/* --- MODO CLARO (Default: Enlaces en Verde) --- */
+/* --- MODO CLARO (Títulos en VERDE, Fuentes en ROJO) --- */
 
-/* 1. Todos los enlaces por defecto (Verde Menos Intenso) */
+/* 1. Enlaces generales por defecto */
 a, 
 a:visited,
 #nav a,
 #nav a:visited {
   text-decoration: none;
-  color: #2d8a4e !important; /* VERDE MENOS INTENSO */
+  color: #c62828 !important; /* ROJO para enlaces generales */
 }
 
 a:hover,
 #nav a:hover {
   text-decoration: underline;
-  color: #1b733b !important;
 }
 
-/* 2. Títulos de Noticias (Tanto en el resumen 'Contents' como en el cuerpo) */
+/* 2. Títulos de Noticias (Resumen 'Contents' y Cuerpo) */
 .contents ol li > a,
 .contents ol li > a:visited,
 .item-title a,
@@ -122,14 +121,14 @@ a:hover,
   margin-bottom: 8px;
 }
 
-/* 3. Enlaces de Repositorios / Blogs de origen */
+/* 3. Fuentes / Repositorios / Subscripciones */
 .feed-title a,
 .feed-title a:visited,
 .item-feed-title a,
 .item-feed-title a:visited,
 #nav ul.subscriptions a,
 #nav ul.subscriptions a:visited {
-  color: #2d8a4e !important; /* VERDE MENOS INTENSO */
+  color: #c62828 !important; /* ROJO */
   font-weight: 600;
 }
 
@@ -179,7 +178,7 @@ hr.item-seperator {
   }
 }
 
-/* --- MODO OSCURO AUTOMÁTICO (Enlaces en Rojo) --- */
+/* --- MODO OSCURO (Títulos en ROJO, Fuentes en VERDE) --- */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212 !important;
@@ -195,7 +194,7 @@ hr.item-seperator {
   a:visited,
   #nav a,
   #nav a:visited {
-    color: #ff7777 !important; /* ROJO MENOS INTENSO */
+    color: #66bb6a !important; /* VERDE para enlaces generales */
   }
 
   /* 1. Títulos de Noticias (Resumen y Cuerpo) */
@@ -206,14 +205,14 @@ hr.item-seperator {
     color: #ff3333 !important; /* ROJO INTENSO */
   }
 
-  /* 2. Repositorios / Blogs de origen */
+  /* 2. Fuentes / Repositorios / Subscripciones */
   .feed-title a,
   .feed-title a:visited,
   .item-feed-title a,
   .item-feed-title a:visited,
   #nav ul.subscriptions a,
   #nav ul.subscriptions a:visited {
-    color: #ff7777 !important; /* ROJO MENOS INTENSO */
+    color: #66bb6a !important; /* VERDE */
   }
 
   #nav {
