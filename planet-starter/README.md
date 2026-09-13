@@ -1,4 +1,4 @@
-# Sample Planet Starter Template Pack
+# Sample Planet Starter Template Pack **Modified**
 
 
 See the [Pluto Planet Guide (Book Edition)](https://feedreader.github.io), that is,

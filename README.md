@@ -24,8 +24,8 @@ Contributions are more than welcome! If you run a blog, news channel, or website
 ```ini
 [your-blog]
   title = Your Site Title
-  link  = [https://yoursite.com](https://yoursite.com)
-  feed  = [https://yoursite.com/feed.xml](https://yoursite.com/feed.xml)
+  link  = https://yoursite.com
+  feed  = https://yoursite.com/feed.xml
 ```
 
 3. Open a Pull Request. Once merged, your posts will automatically appear on the planet.
@@ -69,8 +69,8 @@ Este sitio se compila de forma automática cada hora mediante **GitHub Actions**
 ```ini
 [tu-blog]
   title = Nombre de tu sitio
-  link  = [https://tusitio.com](https://tusitio.com)
-  feed  = [https://tusitio.com/feed.xml](https://tusitio.com/feed.xml)
+  link  = https://tusitio.com
+  feed  = https://tusitio.com/feed.xml
 ```
 3. Abre un Pull Request. Una vez aprobado, tu contenido aparecerá automáticamente en el planeta.
 
