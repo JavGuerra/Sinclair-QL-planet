@@ -27,13 +27,14 @@
         <h2 id="contents-heading" class="contents-title">Contents</h2>
         <ol>
         <% site.items.latest.limit(17).each_with_index do |item,index| %>
+          <% item_date = item.updated || item.published %>
           <li>
               <%= link_to item.title, '#'+"#{index+1}" %>
               <span class='item-feed-title'>
                 &bull; <%= link_to item.feed.title, item.feed.url %>
               </span>
               <span class='item-updated'>
-                 &bull; <%= time_ago_in_words( item.updated ) %>
+                 &bull; <%= time_ago_in_words( item_date ) %>
               </span>
           </li>
         <% end %>
@@ -46,11 +47,12 @@
          index = 0
          ItemCursor.new( items ).each do |item, new_date, new_feed|
            index += 1
+           item_date = item.updated || item.published
       %>
 
       <% if new_date %>
        <h2 class='new-date'>
-        <%= item.updated.strftime('%A, %d. %B %Y') %>
+        <%= item_date.strftime('%A, %d. %B %Y') %>
        </h2>
       <% else %>
         <hr class='item-seperator'>
@@ -67,14 +69,10 @@
          <%= link_to item.title, item.url %>
         </h3>
 
-        <!-- Metadatos (Autor, Hora y Tiempo) debajo del título -->
+        <!-- Metadatos (Fuente, Hora y Tiempo) debajo del título -->
         <div class='item-meta'>
-          <% if item.author %>
-            <span class='item-author'>Por <%= item.author %></span> &bull;
-          <% else %>
-            <span class='item-author'><%= link_to item.feed.title, item.feed.url %></span> &bull;
-          <% end %>
-          <span class='item-updated'><%= item.updated.strftime('%H:%M GMT') %> (<%= time_ago_in_words(item.updated) %>)</span>
+          <span class='item-author'><%= link_to item.feed.title, item.feed.url %></span> &bull;
+          <span class='item-updated'><%= item_date.strftime('%H:%M GMT') %> (<%= time_ago_in_words(item_date) %>)</span>
         </div>
 
         <div class='item-body'>
