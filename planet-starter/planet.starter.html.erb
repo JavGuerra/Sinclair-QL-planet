@@ -69,10 +69,22 @@
          <%= link_to item.title, item.url %>
         </h3>
 
-        <!-- Metadatos (Texto plano de Autor, Hora y Tiempo) debajo del título -->
+        <!-- Metadatos (Autor real de la entrada si existe, Hora y Tiempo) debajo del título -->
         <div class='item-meta'>
-          <% author_name = (item.feed.owner && item.feed.owner.name.present?) ? item.feed.owner.name : item.feed.title %>
-          <span class='item-author'>Por <%= author_name %></span> &bull;
+          <% item_date = item.updated || item.published %>
+          <% 
+            raw_author = if item.respond_to?(:author) && item.author.present?
+                           item.author.respond_to?(:name) ? item.author.name : item.author.to_s
+                         elsif item.respond_to?(:authors) && item.authors.present?
+                           first_author = item.authors.first
+                           first_author.respond_to?(:name) ? first_author.name : first_author.to_s
+                         end
+
+            author_name = (raw_author.present? && raw_author.strip.downcase != item.feed.title.strip.downcase) ? raw_author.strip : nil
+          %>
+          <% if author_name %>
+            <span class='item-author'>By <%= author_name %></span> &bull;
+          <% end %>
           <span class='item-updated'><%= item_date.strftime('%H:%M GMT') %> (<%= time_ago_in_words(item_date) %>)</span>
         </div>
 
