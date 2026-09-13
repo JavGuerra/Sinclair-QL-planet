@@ -33,7 +33,7 @@
                 &bull; <%= link_to item.feed.title, item.feed.url %>
               </span>
               <span class='item-updated'>
-                 &bull;  <%= time_ago_in_words( item.updated ) %>
+                 &bull; <%= time_ago_in_words( item.updated ) %>
               </span>
           </li>
         <% end %>
@@ -67,6 +67,16 @@
          <%= link_to item.title, item.url %>
         </h3>
 
+        <!-- Metadatos (Autor, Hora y Tiempo) debajo del título -->
+        <div class='item-meta'>
+          <% if item.author %>
+            <span class='item-author'>Por <%= item.author %></span> &bull;
+          <% else %>
+            <span class='item-author'><%= link_to item.feed.title, item.feed.url %></span> &bull;
+          <% end %>
+          <span class='item-updated'><%= item.updated.strftime('%H:%M GMT') %> (<%= time_ago_in_words(item.updated) %>)</span>
+        </div>
+
         <div class='item-body'>
           <div class='item-content item-summary'>
           <% if item.content %>
@@ -76,11 +86,6 @@
           <% else %>
             -/-
           <% end %>
-          </div>
-
-          <div class='item-footer'>
-             <%= item.updated.strftime('%H:%M') %> &bull;
-             <%= time_ago_in_words( item.updated ) %>
           </div>
         </div>
       </article>

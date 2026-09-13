@@ -119,18 +119,32 @@ a:hover,
   font-size: 1.4rem;
   line-height: 1.3;
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
-/* 3. Fuentes / Repositorios / Subscripciones */
+/* 3. Fuentes / Repositorios / Subscripciones / Autor */
 .feed-title a,
 .feed-title a:visited,
 .item-feed-title a,
 .item-feed-title a:visited,
+.item-author a,
+.item-author a:visited,
 #nav ul.subscriptions a,
 #nav ul.subscriptions a:visited {
   color: #FF0000 !important; /* ROJO PURO #FF0000 */
   font-weight: 400 !important;
+}
+
+/* Metadatos (Autor y Tiempo bajo el título) */
+.item-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.item-updated {
+  font-size: 0.85rem;
+  color: #666;
 }
 
 /* Separadores y fechas */
@@ -155,17 +169,6 @@ hr.item-seperator {
 .item-content img {
   max-width: 100%;
   height: auto;
-}
-
-/* 4. Fechas y tiempos transcurridos (Pies de artículo e índice Contents) */
-.item-footer,
-.item-updated {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.item-footer {
-  margin-top: 10px;
 }
 
 /* Adaptabilidad Móvil */
@@ -212,11 +215,13 @@ hr.item-seperator {
     font-weight: 700;
   }
 
-  /* 2. Fuentes / Repositorios / Subscripciones */
+  /* 2. Fuentes / Repositorios / Subscripciones / Autor */
   .feed-title a,
   .feed-title a:visited,
   .item-feed-title a,
   .item-feed-title a:visited,
+  .item-author a,
+  .item-author a:visited,
   #nav ul.subscriptions a,
   #nav ul.subscriptions a:visited {
     color: #00FF00 !important; /* VERDE PURO #00FF00 */
@@ -240,8 +245,8 @@ hr.item-seperator {
     background-color: #333;
   }
 
-  /* Fechas y tiempos transcurridos en modo oscuro */
-  .item-footer,
+  /* Metadatos en modo oscuro */
+  .item-meta,
   .item-updated {
     color: #888;
   }
