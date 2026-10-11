@@ -105,7 +105,7 @@ a:hover,
 .contents ol li > a:visited,
 .item-title a,
 .item-title a:visited {
-  color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 */
+  color: #FF0000 !important; /* ROJO PURO #FF0000 */
   font-weight: 700;
 }
 
@@ -129,7 +129,7 @@ a:hover,
 .item-feed-title a:visited,
 #nav ul.subscriptions a,
 #nav ul.subscriptions a:visited {
-  color: #FF0000 !important; /* ROJO PURO #FF0000 */
+  color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 */
   font-weight: 400 !important;
 }
 
@@ -210,7 +210,7 @@ hr.item-seperator {
   .contents ol li > a:visited,
   .item-title a,
   .item-title a:visited {
-    color: #FF0000 !important; /* ROJO PURO #FF0000 */
+    color: #00FF00 !important; /* VERDE PURO #00FF00 */
     font-weight: 700;
   }
 
@@ -221,7 +221,8 @@ hr.item-seperator {
   .item-feed-title a:visited,
   #nav ul.subscriptions a,
   #nav ul.subscriptions a:visited {
-    color: #00FF00 !important; /* VERDE PURO #00FF00 */
+    color: #FF0000 !important; /* ROJO PURO #FF0000 */
+    font-weight: 400 !important;
   }
 
   #nav {
