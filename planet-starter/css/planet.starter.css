@@ -128,7 +128,9 @@ a:hover,
 .item-feed-title a,
 .item-feed-title a:visited,
 #nav ul.subscriptions a,
-#nav ul.subscriptions a:visited {
+#nav ul.subscriptions a:visited,
+.planet-feeds,
+.pluto {
   color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 */
   font-weight: 400 !important;
 }
@@ -220,7 +222,9 @@ hr.item-seperator {
   .item-feed-title a,
   .item-feed-title a:visited,
   #nav ul.subscriptions a,
-  #nav ul.subscriptions a:visited {
+  #nav ul.subscriptions a:visited,
+  .planet-feeds,
+  .pluto {
     color: #FF0000 !important; /* ROJO PURO #FF0000 */
     font-weight: 400 !important;
   }
