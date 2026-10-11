@@ -196,6 +196,39 @@ hr.item-seperator {
     border-bottom-color: #444;
   }
 
+  /* Enlaces generales en oscuro */
+  a, 
+  a:visited,
+  #nav a,
+  #nav a:visited {
+    color: #00FF00 !important; /* VERDE PURO #00FF00 */
+    font-weight: 400;
+  }
+
+  /* 1. Títulos de Noticias (Resumen y Cuerpo) */
+  .contents ol li > a,
+  .contents ol li > a:visited,
+  .item-title a,
+  .item-title a:visited {
+        color: #00FF00 !important; /* VERDE PURO #00FF00 */
+    font-weight: 700;
+  }
+
+  /* 2. Fuentes / Repositorios / Subscripciones */
+  .feed-title a,
+  .feed-title a:visited,
+  #nav ul.subscriptions a,
+  #nav ul.subscriptions a:visited {
+    color: #00FF00 !important; /* VERDE PURO #00FF00 */
+    font-weight: 400 !important;
+  }
+
+  /* 3. Fuentes */
+  .item-feed-title a,
+  .item-feed-title a:visited {
+    color: #FF0000 !important; /* ROJO PURO #FF0000 */
+  }
+
   #nav {
     background-color: #1e1e1e !important;
     border-color: #333;
