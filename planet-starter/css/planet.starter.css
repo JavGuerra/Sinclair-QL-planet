@@ -214,18 +214,18 @@ hr.item-seperator {
     font-weight: 700;
   }
 
-  /* 2. Fuentes / Repositorios / Subscripciones */
+  /* 2. Fuentes */
   .feed-title a,
-  .feed-title a:visited,
-  #nav ul.subscriptions a,
-  #nav ul.subscriptions a:visited {
+  .feed-title a:visited {
     color: #00FF00 !important; /* VERDE PURO #00FF00 */
     font-weight: 400 !important;
   }
 
-  /* 3. Fuentes */
+  /* 3. Fuentes / Repositorios / Subscripciones  */
   .item-feed-title a,
   .item-feed-title a:visited,
+  #nav ul.subscriptions a,
+  #nav ul.subscriptions a:visited,
   article .feed-title,
   article .feed-title a:visited {
     color: #FF0000 !important; /* ROJO PURO #FF0000 */
