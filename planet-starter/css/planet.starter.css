@@ -225,7 +225,8 @@ hr.item-seperator {
 
   /* 3. Fuentes */
   .item-feed-title a,
-  .item-feed-title a:visited {
+  .item-feed-title a:visited,
+  #feed-title {
     color: #FF0000 !important; /* ROJO PURO #FF0000 */
   }
 
