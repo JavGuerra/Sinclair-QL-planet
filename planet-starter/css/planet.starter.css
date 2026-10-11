@@ -227,6 +227,7 @@ hr.item-seperator {
   #nav {
     background-color: #1e1e1e !important;
     border-color: #333;
+    color: #FF0000 !important; /* ROJO PURO #FF0000 */
   }
 
   .small {
