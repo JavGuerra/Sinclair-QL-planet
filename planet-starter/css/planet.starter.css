@@ -104,7 +104,9 @@ a:hover,
 .contents ol li > a,
 .contents ol li > a:visited,
 .item-title a,
-.item-title a:visited {
+.item-title a:visited,
+#nav ul.subscriptions a,
+#nav ul.subscriptions a:visited {
   color: #FF0000 !important; /* ROJO PURO #FF0000 */
   font-weight: 700;
 }
@@ -207,7 +209,9 @@ hr.item-seperator {
   .contents ol li > a,
   .contents ol li > a:visited,
   .item-title a,
-  .item-title a:visited {
+  .item-title a:visited,
+  #nav ul.subscriptions a,
+  #nav ul.subscriptions a:visited {
     color: #00FF00 !important; /* VERDE PURO #00FF00 */
     font-weight: 700;
   }
