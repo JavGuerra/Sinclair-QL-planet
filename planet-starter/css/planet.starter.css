@@ -126,11 +126,7 @@ a:hover,
 .feed-title a,
 .feed-title a:visited,
 .item-feed-title a,
-.item-feed-title a:visited,
-#nav ul.subscriptions a,
-#nav ul.subscriptions a:visited,
-.planet-feeds,
-.pluto {
+.item-feed-title a:visited {
   color: #00A800 !important; /* Verde fósforo ajustado a WCAG AA 4.5:1 */
   font-weight: 400 !important;
 }
@@ -220,11 +216,7 @@ hr.item-seperator {
   .feed-title a,
   .feed-title a:visited,
   .item-feed-title a,
-  .item-feed-title a:visited,
-  #nav ul.subscriptions a,
-  #nav ul.subscriptions a:visited,
-  .planet-feeds,
-  .pluto {
+  .item-feed-title a:visited {
     color: #FF0000 !important; /* ROJO PURO #FF0000 */
     font-weight: 400 !important;
   }
